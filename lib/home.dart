@@ -36,10 +36,11 @@ class _HomeState extends State<Home> {
                         shape: CircleBorder(),
                       ),
                       onPressed: () {
-                        if (index < planets[index].imagePath.length - 1) {
-                          index++;
+                        if (index > 0) {
+                          setState(() {index--;});
+
                         }
-                        setState(() {});
+
                       },
                       child: Icon(
                         Icons.arrow_back_rounded,
@@ -60,10 +61,11 @@ class _HomeState extends State<Home> {
                         shape: CircleBorder(),
                       ),
                       onPressed: () {
-                        if (index > 0) {
-                          index--;
+                        if (index < planets.length - 1) {
+                          setState(() {index++;});
+
                         }
-                        setState(() {});
+
                       },
                       child: Icon(Icons.arrow_forward, color: Colors.white),
                     ),
